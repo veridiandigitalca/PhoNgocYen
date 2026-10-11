@@ -1,0 +1,33 @@
+/* Pho Ngoc Yen page-transition loader. Namespaced to avoid changing existing site styles. */
+.pho-loader{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;overflow:hidden;background:var(--paper,#f5f2e9);color:var(--forest,#17241d);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .34s var(--ease,cubic-bezier(.2,.7,.2,1)),visibility .34s;isolation:isolate}
+.pho-loader.is-active,html.pho-loader-entry .pho-loader{opacity:1;visibility:visible;pointer-events:auto}
+html.pho-loader-entry body,body.pho-loader-lock{overflow:hidden!important}
+.pho-loader__grain{position:absolute;inset:0;z-index:-1;opacity:.4;pointer-events:none;background:radial-gradient(ellipse at 50% 43%,rgba(216,230,124,.22),transparent 45%),radial-gradient(circle at 15% 18%,rgba(35,56,45,.05) 0 1px,transparent 1.6px);background-size:auto,13px 13px}
+.pho-loader__content{width:min(100% - 36px,460px);display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 0;transform:translateY(7px);transition:transform .55s var(--ease,cubic-bezier(.2,.7,.2,1))}
+.pho-loader.is-active .pho-loader__content,html.pho-loader-entry .pho-loader__content{transform:translateY(0)}
+.pho-loader__art{width:min(100%,360px);margin-bottom:1px}
+.pho-loader__illustration{display:block;width:100%;height:auto;overflow:visible}
+.pho-loader__shadow{fill:rgba(23,36,29,.12);animation:pho-shadow 1.8s ease-in-out infinite}
+.pho-loader__steam{stroke-dasharray:70;stroke-dashoffset:70;opacity:0;animation:pho-steam 1.8s ease-in-out infinite}
+.pho-loader__steam--two{animation-delay:.35s}.pho-loader__steam--three{animation-delay:.7s}
+.pho-loader__chopsticks{transform-origin:252px 103px;animation:pho-chopsticks 1.8s var(--ease,cubic-bezier(.2,.7,.2,1)) infinite}
+.pho-loader__ingredients{transform-origin:180px 148px;animation:pho-toppings 1.8s var(--ease,cubic-bezier(.2,.7,.2,1)) infinite}
+.pho-loader__noodle{fill:none;stroke:#efd9ac;stroke-width:3;stroke-linecap:round;stroke-dasharray:180;stroke-dashoffset:180;animation:pho-noodle 1.8s ease-in-out infinite}
+.pho-loader__broth{transform-origin:180px 157px;animation:pho-broth 1.8s ease-in-out infinite}
+.pho-loader__herbs,.pho-loader__onion{transform-origin:180px 146px;animation:pho-herbs 1.8s var(--ease,cubic-bezier(.2,.7,.2,1)) infinite}
+.pho-loader__onion{animation-delay:.14s}
+.pho-loader__brand{margin:0;color:var(--forest,#17241d);font-family:var(--sans,Arial,sans-serif);font-size:11px;font-weight:700;letter-spacing:.25em;padding-left:.25em}
+.pho-loader__caption{margin:8px 0 17px;color:#697064;font-family:var(--serif,Georgia,serif);font-size:17px;font-style:italic}
+.pho-loader__rule{display:block;width:76px;height:2px;background:rgba(23,36,29,.12);overflow:hidden}
+.pho-loader__rule span{display:block;width:45%;height:100%;background:var(--moss-dark,#b8c75b);transform:translateX(-110%);animation:pho-rule 0.85s ease-in-out infinite}
+.pho-loader[aria-hidden="true"] .pho-loader__content{user-select:none}
+@keyframes pho-steam{0%,10%{stroke-dashoffset:70;opacity:0;transform:translateY(8px)}28%,68%{stroke-dashoffset:0;opacity:.72}88%,100%{stroke-dashoffset:-24;opacity:0;transform:translateY(-5px)}}
+@keyframes pho-chopsticks{0%,18%,100%{transform:rotate(0)}35%{transform:rotate(-5deg)}49%{transform:rotate(2deg)}63%{transform:rotate(0)}}
+@keyframes pho-toppings{0%,17%{transform:translateY(-10px);opacity:.15}38%,78%,100%{transform:translateY(0);opacity:1}}
+@keyframes pho-noodle{0%,18%{stroke-dashoffset:180;opacity:.2}55%,100%{stroke-dashoffset:0;opacity:1}}
+@keyframes pho-broth{0%,18%{transform:scaleY(.84);opacity:.75}48%,82%,100%{transform:scaleY(1);opacity:1}}
+@keyframes pho-herbs{0%,24%{transform:translateY(-8px) rotate(-5deg);opacity:0}46%,100%{transform:translateY(0) rotate(0);opacity:1}}
+@keyframes pho-shadow{0%,100%{transform:scaleX(.96);opacity:.7}50%{transform:scaleX(1.04);opacity:1}}
+@keyframes pho-rule{0%{transform:translateX(-110%)}60%,100%{transform:translateX(230%)}}
+@media(max-width:520px){.pho-loader__art{width:min(100%,310px)}.pho-loader__content{padding:16px 0}.pho-loader__caption{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.pho-loader,.pho-loader__content{transition:none}.pho-loader__steam,.pho-loader__chopsticks,.pho-loader__ingredients,.pho-loader__noodle,.pho-loader__broth,.pho-loader__herbs,.pho-loader__onion,.pho-loader__shadow,.pho-loader__rule span{animation:none!important}.pho-loader__steam{opacity:.3;stroke-dashoffset:0}}
