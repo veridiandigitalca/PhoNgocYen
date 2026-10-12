@@ -162,3 +162,13 @@ p:last-child{font-size:12px;max-width:310px}.menu-intro{padding-bottom:45px}.men
     font-size: 29px;
   }
 }
+
+/* Prevent the external-link arrow from rendering as an emoji */
+.external-arrow {
+  font-family: Arial, sans-serif;
+  font-variant-emoji: text;
+  color: inherit;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+}
