@@ -52,4 +52,10 @@ https://YOUR-DOMAIN.example/terms.html</loc>
 https://YOUR-DOMAIN.example/accessibility.html</loc>
 </url>
 
+
+  <url>
+<loc>
+https://YOUR-DOMAIN.example/reviews-press.html</loc>
+</url>
+
 </urlset>
