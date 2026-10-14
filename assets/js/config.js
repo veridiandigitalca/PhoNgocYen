@@ -1,7 +1,16 @@
-/* Centralized editable business details. Verify all details before launch. */
+/* Editable business and integration settings.
+   Only the contact form reads this file today; other pages contain their details directly in HTML.
+   Verify every detail with the restaurant before launch. */
 window.PNY_CONFIG = {
   brand: "Phở Ngọc Yến",
   officialWebsite: "https://ngocyenrestaurant.com/",
+
+  /* CONTACT FORM — set ONE of these before launch (both left empty = demo mode):
+     formEndpoint: URL of a form service that accepts a JSON POST (e.g. a Formspree/Basin endpoint or your own API).
+     contactEmail: address used to pre-fill the visitor's email app when no endpoint is set. */
+  formEndpoint: "",
+  contactEmail: "",
+
   locations: {
     mississauga: {
       name: "Mississauga — Kamato Road",

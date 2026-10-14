@@ -1,192 +1,128 @@
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#17241d">
-<title>
-Privacy Notice | Pho Ngoc Yen</title>
+<title>Privacy Notice | Pho Ngoc Yen</title>
+<meta name="description" content="Privacy notice draft for the Pho Ngoc Yen website. Review and approve before launch.">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/privacy.html">
+<meta property="og:site_name" content="Phở Ngọc Yến">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy Notice | Pho Ngoc Yen">
+<meta property="og:description" content="Privacy notice draft for the Pho Ngoc Yen website. Review and approve before launch.">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/privacy.html">
+<meta property="og:image" content="https://YOUR-DOMAIN.example/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/pho-loader.css">
-  <script>
-  /* Only show the loader when arriving from an internal page navigation. */
+<link rel="stylesheet" href="assets/css/pho-loader.css">
+<script>
+  /* Mark JS availability (reveal animations are opt-in) and show the page-transition loader only after an internal navigation. */
   (function () {
+    var root = document.documentElement;
+    root.classList.add("js");
     try {
       var key = "pho-ngoc-yen-transition";
       var raw = sessionStorage.getItem(key);
       if (!raw) return;
-      var transition = JSON.parse(raw);
-      if (!transition || transition.to !== location.pathname || Date.now() - transition.at > 6000) {
-        sessionStorage.removeItem(key);
-        return;
-      }
+      var t = JSON.parse(raw);
       sessionStorage.removeItem(key);
-      document.documentElement.classList.add("pho-loader-entry");
-      window.setTimeout(function () {
-        document.documentElement.classList.remove("pho-loader-entry");
-        var loader = document.querySelector("[data-pho-loader]");
-        if (loader) {
-          loader.classList.remove("is-active");
-          loader.setAttribute("aria-hidden", "true");
-        }
-        if (document.body) document.body.classList.remove("pho-loader-lock");
-      }, 1800);
-    } catch (error) {}
+      if (!t || t.to !== location.pathname || Date.now() - t.at > 6000) return;
+      root.classList.add("pho-loader-entry");
+      window.setTimeout(function () { root.classList.remove("pho-loader-entry"); }, 1800);
+    } catch (e) {}
   })();
   </script>
-   <script defer src="assets/js/app.js">
-</script>
-  <script defer src="assets/js/page-init.js">
-</script>
-  
-
-  <script defer src="assets/js/pho-loader.js"></script>
+<script defer src="assets/js/app.js"></script>
+<script defer src="assets/js/pho-loader.js"></script>
 </head>
 <body>
-
-<div class="pho-loader" data-pho-loader role="status" aria-live="polite" aria-label="Preparing your next page" aria-hidden="true">
-  <div class="pho-loader__grain" aria-hidden="true"></div>
-  <div class="pho-loader__content">
-    <div class="pho-loader__art" aria-hidden="true">
-      <svg class="pho-loader__illustration" viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" focusable="false">
-        <defs>
-          <linearGradient id="pho-bowl-glaze" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf7"/><stop offset=".55" stop-color="#e8e1d1"/><stop offset="1" stop-color="#cfc7b4"/></linearGradient>
-          <linearGradient id="pho-broth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8793f"/><stop offset="1" stop-color="#75472c"/></linearGradient>
-          <clipPath id="pho-bowl-interior"><ellipse cx="180" cy="157" rx="104" ry="27"/></clipPath>
-        </defs>
-        <ellipse class="pho-loader__shadow" cx="180" cy="229" rx="95" ry="13"/>
-        <g class="pho-loader__steam-group" fill="none" stroke="#9aa887" stroke-linecap="round" stroke-width="3.5">
-          <path class="pho-loader__steam pho-loader__steam--one" d="M143 128 C126 111 153 101 141 82 C135 72 137 66 143 59"/>
-          <path class="pho-loader__steam pho-loader__steam--two" d="M179 122 C164 106 190 94 178 77 C171 67 176 59 182 52"/>
-          <path class="pho-loader__steam pho-loader__steam--three" d="M215 128 C201 111 225 101 214 86 C207 77 211 68 218 63"/>
-        </g>
-        <g class="pho-loader__chopsticks" stroke="#6b4b31" stroke-linecap="round" stroke-width="4"><path d="M226 77 L274 133"/><path d="M238 70 L284 126"/></g>
-        <g class="pho-loader__ingredients">
-          <path class="pho-loader__noodle" d="M106 151 C122 130 141 173 159 148 S193 132 208 151 S239 170 254 147"/>
-          <path class="pho-loader__noodle" d="M111 158 C130 138 143 177 166 157 S198 140 216 158 S239 171 248 157"/>
-          <path class="pho-loader__noodle" d="M124 145 C139 166 156 135 174 151 S205 169 225 145"/>
-          <ellipse cx="151" cy="145" rx="15" ry="8" fill="#8c4d36" transform="rotate(-24 151 145)"/>
-          <ellipse cx="205" cy="144" rx="16" ry="8" fill="#a45e42" transform="rotate(17 205 144)"/>
-          <g class="pho-loader__herbs" fill="#5b7b4b"><ellipse cx="137" cy="138" rx="5" ry="10" transform="rotate(-42 137 138)"/><ellipse cx="163" cy="132" rx="5" ry="11" transform="rotate(24 163 132)"/><ellipse cx="191" cy="135" rx="5" ry="10" transform="rotate(-28 191 135)"/><ellipse cx="220" cy="140" rx="5" ry="10" transform="rotate(40 220 140)"/><ellipse cx="177" cy="145" rx="4" ry="9" transform="rotate(65 177 145)"/></g>
-          <g class="pho-loader__onion" fill="#d8e67c"><circle cx="145" cy="151" r="3.5"/><circle cx="184" cy="132" r="3.5"/><circle cx="218" cy="153" r="3.5"/><circle cx="169" cy="160" r="3"/></g>
-          <g fill="#f5f2e9" opacity=".9"><circle cx="125" cy="151" r="2"/><circle cx="235" cy="151" r="2"/><circle cx="194" cy="158" r="2"/></g>
-        </g>
-        <path class="pho-loader__broth" d="M76 157 C81 193 112 220 180 221 C248 220 279 193 284 157 C260 174 100 174 76 157Z"/>
-        <path class="pho-loader__bowl" d="M66 155 C75 204 115 234 180 234 C245 234 285 204 294 155 L279 157 C269 194 236 215 180 215 C124 215 91 194 81 157Z" fill="url(#pho-bowl-glaze)"/>
-        <ellipse class="pho-loader__rim" cx="180" cy="156" rx="114" ry="31" fill="#fffdf7" stroke="#d1c8b7" stroke-width="3"/>
-        <ellipse class="pho-loader__soup" cx="180" cy="157" rx="103" ry="24" fill="url(#pho-broth)"/>
-        <g clip-path="url(#pho-bowl-interior)">
-          <g class="pho-loader__noodles-front" fill="none" stroke="#f0dfb9" stroke-linecap="round" stroke-width="3.2"><path d="M93 158 C115 139 133 174 156 155 S194 141 211 158 S240 170 263 151"/><path d="M100 166 C121 148 144 179 166 162 S204 149 224 166 S246 168 255 160"/><path d="M122 148 C143 167 159 144 181 155 S218 170 240 147"/></g>
-        </g>
-        <path d="M66 155 C75 204 115 234 180 234 C245 234 285 204 294 155" fill="none" stroke="#b8ad99" stroke-width="2"/>
-        <path d="M120 222 C148 233 212 233 240 222" fill="none" stroke="#d8e67c" stroke-width="2.5" opacity=".9"/>
-      </svg>
-    </div>
-    <p class="pho-loader__brand">PHỞ NGỌC YẾN</p>
-    <p class="pho-loader__caption">A bowl worth waiting for</p>
-    <span class="pho-loader__rule" aria-hidden="true"><span></span></span>
-  </div>
-</div>
-
-
-<a class="skip-link" href="#main">
-Skip to content</a>
-<header class="site-header">
+<div class="pho-loader" data-pho-loader role="status" aria-live="polite" aria-label="Preparing your next page" aria-hidden="true"><div class="pho-loader__grain" aria-hidden="true"></div><div class="pho-loader__content"><div class="pho-loader__art" aria-hidden="true"><svg class="pho-loader__illustration" viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" focusable="false"><defs><linearGradient id="pho-bowl-glaze" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf7"/><stop offset=".55" stop-color="#e8e1d1"/><stop offset="1" stop-color="#cfc7b4"/></linearGradient><linearGradient id="pho-broth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8793f"/><stop offset="1" stop-color="#75472c"/></linearGradient><clipPath id="pho-bowl-interior"><ellipse cx="180" cy="157" rx="104" ry="27"/></clipPath></defs><ellipse class="pho-loader__shadow" cx="180" cy="229" rx="95" ry="13"/><g class="pho-loader__steam-group" fill="none" stroke="#9aa887" stroke-linecap="round" stroke-width="3.5"><path class="pho-loader__steam pho-loader__steam--one" d="M143 128 C126 111 153 101 141 82 C135 72 137 66 143 59"/><path class="pho-loader__steam pho-loader__steam--two" d="M179 122 C164 106 190 94 178 77 C171 67 176 59 182 52"/><path class="pho-loader__steam pho-loader__steam--three" d="M215 128 C201 111 225 101 214 86 C207 77 211 68 218 63"/></g><g class="pho-loader__chopsticks" stroke="#6b4b31" stroke-linecap="round" stroke-width="4"><path d="M226 77 L274 133"/><path d="M238 70 L284 126"/></g><g class="pho-loader__ingredients"><path class="pho-loader__noodle" d="M106 151 C122 130 141 173 159 148 S193 132 208 151 S239 170 254 147"/><path class="pho-loader__noodle" d="M111 158 C130 138 143 177 166 157 S198 140 216 158 S239 171 248 157"/><path class="pho-loader__noodle" d="M124 145 C139 166 156 135 174 151 S205 169 225 145"/><ellipse cx="151" cy="145" rx="15" ry="8" fill="#8c4d36" transform="rotate(-24 151 145)"/><ellipse cx="205" cy="144" rx="16" ry="8" fill="#a45e42" transform="rotate(17 205 144)"/><g class="pho-loader__herbs" fill="#5b7b4b"><ellipse cx="137" cy="138" rx="5" ry="10" transform="rotate(-42 137 138)"/><ellipse cx="163" cy="132" rx="5" ry="11" transform="rotate(24 163 132)"/><ellipse cx="191" cy="135" rx="5" ry="10" transform="rotate(-28 191 135)"/><ellipse cx="220" cy="140" rx="5" ry="10" transform="rotate(40 220 140)"/><ellipse cx="177" cy="145" rx="4" ry="9" transform="rotate(65 177 145)"/></g><g class="pho-loader__onion" fill="#d8e67c"><circle cx="145" cy="151" r="3.5"/><circle cx="184" cy="132" r="3.5"/><circle cx="218" cy="153" r="3.5"/><circle cx="169" cy="160" r="3"/></g><g fill="#f5f2e9" opacity=".9"><circle cx="125" cy="151" r="2"/><circle cx="235" cy="151" r="2"/><circle cx="194" cy="158" r="2"/></g></g><path class="pho-loader__broth" d="M76 157 C81 193 112 220 180 221 C248 220 279 193 284 157 C260 174 100 174 76 157Z"/><path class="pho-loader__bowl" d="M66 155 C75 204 115 234 180 234 C245 234 285 204 294 155 L279 157 C269 194 236 215 180 215 C124 215 91 194 81 157Z" fill="url(#pho-bowl-glaze)"/><ellipse class="pho-loader__rim" cx="180" cy="156" rx="114" ry="31" fill="#fffdf7" stroke="#d1c8b7" stroke-width="3"/><ellipse class="pho-loader__soup" cx="180" cy="157" rx="103" ry="24" fill="url(#pho-broth)"/><g clip-path="url(#pho-bowl-interior)"><g class="pho-loader__noodles-front" fill="none" stroke="#f0dfb9" stroke-linecap="round" stroke-width="3.2"><path d="M93 158 C115 139 133 174 156 155 S194 141 211 158 S240 170 263 151"/><path d="M100 166 C121 148 144 179 166 162 S204 149 224 166 S246 168 255 160"/><path d="M122 148 C143 167 159 144 181 155 S218 170 240 147"/></g></g><path d="M66 155 C75 204 115 234 180 234 C245 234 285 204 294 155" fill="none" stroke="#b8ad99" stroke-width="2"/><path d="M120 222 C148 233 212 233 240 222" fill="none" stroke="#d8e67c" stroke-width="2.5" opacity=".9"/></svg></div><p class="pho-loader__brand">PHỞ NGỌC YẾN</p><p class="pho-loader__caption">A bowl worth waiting for</p><span class="pho-loader__rule" aria-hidden="true"><span></span></span></div></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announcement"><span class="announcement-dot" aria-hidden="true"></span><span class="announcement-text">Southern Vietnamese comfort, served with a sense of occasion</span><span class="announcement-right">MISSISSAUGA · GTA</span></div>
+<header class="site-header" data-header>
 <div class="header-inner">
-<a class="brand" href="index.html">
-<span class="brand-mark">
-NY</span>
-<span class="brand-wordmark">
-<strong>
-PHỞ NGỌC YẾN</strong>
-<small>
-VIETNAMESE KITCHEN</small>
-</span>
-</a>
-<nav class="nav nav-simple">
-<a href="index.html">
-Home</a>
-<a href="menu.html">
-Menu</a>
-<a href="locations.html">
-Locations</a>
-<a href="reviews-press.html">
-Reviews &amp; Press</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+<a class="brand" href="index.html" aria-label="Pho Ngoc Yen home"><span class="brand-mark" aria-hidden="true">NY</span><span class="brand-wordmark"><strong>PHỞ NGỌC YẾN</strong><small>VIETNAMESE KITCHEN</small></span></a>
+<nav class="nav" id="primary-nav" aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="story.html">Our story</a>
+<a href="locations.html">Locations</a>
+<a href="reviews-press.html">Reviews &amp; Press</a>
 </nav>
-<a class="button button-dark header-cta" href="locations.html">
-Visit us <span class="value-arrow">↗︎</span>
-</a>
+<a class="button button-dark header-cta" href="locations.html#mississauga">Find your table <span aria-hidden="true">↗︎</span></a>
 </div>
 </header>
 <main id="main" class="legal-page section-pad">
 <div class="container legal-container">
-<span class="section-index">
-POLICIES / 01</span>
-<h1>
-Privacy <em>
-notice.</em>
-</h1>
-<p class="legal-updated">
-Website concept draft — review and approve before launch.</p>
-<p>
-This page is a starting-point template for the restaurant's final privacy notice. It is not legal advice and should be updated to reflect the actual operator, data practices, vendors, and applicable law before publication.</p>
-<h2>
-Information you may provide</h2>
-<p>
-If contact or enquiry forms are enabled, the website may collect information you choose to provide, such as your name, email address, enquiry topic, and message. Collect only what is necessary to respond.</p>
-<h2>
-How information may be used</h2>
-<p>
-Information should be used only for the purpose explained at collection, such as responding to an enquiry, managing a request, or maintaining site security. Do not add marketing subscriptions without a separate, clear choice where required.</p>
-<h2>
-Forms and third-party services</h2>
-<p>
-The contact form in this demo does not transmit data. Before launch, identify the selected form provider and any analytics, maps, embedded social media, hosting, or other third-party services. Explain what they collect and link to their policies.</p>
-<h2>
-Cookies and analytics</h2>
-<p>
-This starter site does not include analytics code or a tracking-cookie banner. If analytics, advertising, or non-essential cookies are added, review applicable consent requirements and configure a suitable consent mechanism before enabling them.</p>
-<h2>
-Retention, safeguards, and requests</h2>
-<p>
-Define retention periods, reasonable safeguards, and the process for privacy questions or access/correction requests. Add the legal business name and a monitored privacy contact before publishing.</p>
-<h2>
-Contact</h2>
-<p>
-For the live version, replace this placeholder with the restaurant's verified privacy contact and the identity of the data controller.</p>
-<a class="underlined-link" href="index.html">
-← Back to home</a>
+<span class="section-index">POLICIES / 01</span>
+<h1>Privacy <em>notice.</em></h1>
+<p class="legal-updated">Website concept draft — review and approve before launch.</p>
+<p>This page is a starting-point template for the restaurant's final privacy notice. It is not legal advice and should be updated to reflect the actual operator, data practices, vendors, and applicable law before publication.</p>
+<h2>Information you may provide</h2>
+<p>If contact or enquiry forms are enabled, the website may collect information you choose to provide, such as your name, email address, enquiry topic, and message. Collect only what is necessary to respond.</p>
+<h2>How information may be used</h2>
+<p>Information should be used only for the purpose explained at collection, such as responding to an enquiry, managing a request, or maintaining site security. Do not add marketing subscriptions without a separate, clear choice where required.</p>
+<h2>Forms and third-party services</h2>
+<p>The contact form in this demo does not transmit data. Before launch, identify the selected form provider and any analytics, maps, embedded social media, hosting, or other third-party services. Explain what they collect and link to their policies.</p>
+<h2>Cookies and analytics</h2>
+<p>This starter site does not include analytics code or a tracking-cookie banner. If analytics, advertising, or non-essential cookies are added, review applicable consent requirements and configure a suitable consent mechanism before enabling them.</p>
+<h2>Retention, safeguards, and requests</h2>
+<p>Define retention periods, reasonable safeguards, and the process for privacy questions or access/correction requests. Add the legal business name and a monitored privacy contact before publishing.</p>
+<h2>Contact</h2>
+<p>For the live version, replace this placeholder with the restaurant's verified privacy contact and the identity of the data controller.</p>
+<a class="underlined-link" href="index.html">← Back to home</a>
 </div>
 </main>
 <footer class="site-footer">
-<div class="container footer-bottom">
-<span>
-© <span data-year>
-</span>
- Phở Ngọc Yến.</span>
-<div>
-<a href="privacy.html">
-Privacy</a>
-<a href="terms.html">
-Terms</a>
-<a href="accessibility.html">
-Accessibility</a>
+<div class="container footer-main">
+<div class="footer-brand">
+<a class="brand brand-footer" href="index.html" aria-label="Pho Ngoc Yen home"><span class="brand-mark" aria-hidden="true">NY</span><span class="brand-wordmark"><strong>PHỞ NGỌC YẾN</strong><small>VIETNAMESE KITCHEN</small></span></a>
+<p>Good food. Good company.<br>A little piece of Vietnam.</p>
 </div>
-<span class="powered">
-Website concept by <a href="https://ca.linkedin.com/company/veridiandigital" target="_blank" rel="noopener">
-Veridian Digital</a>
-</span>
+<nav class="footer-column" aria-label="Footer navigation">
+<span class="footer-heading">EXPLORE</span>
+<a href="menu.html">Menu</a>
+<a href="story.html">Our story</a>
+<a href="locations.html">Locations</a>
+<a href="reviews-press.html">Reviews &amp; Press</a>
+<a href="group-dining.html">Group dining</a>
+<a href="contact.html">Contact</a>
+</nav>
+<div class="footer-column">
+<span class="footer-heading">VISIT US</span>
+<strong>Mississauga</strong>
+<span>1090 Kamato Rd, Units 17–19</span>
+<span>Mississauga, ON L4W 2P3</span>
+<a href="tel:+19056299559">(905) 629-9559</a>
+</div>
+<div class="footer-note">
+<span class="footer-flower" aria-hidden="true"><span class="css-star"></span></span>
+<p>Come as you are.<br>Leave a little happier.</p>
+<a class="text-link light-link" href="locations.html">Find your location <span aria-hidden="true">→︎</span></a>
+</div>
+</div>
+<div class="container footer-bottom">
+<span>© <span data-year></span> Phở Ngọc Yến. All rights reserved.</span>
+<div>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
+<a href="accessibility.html">Accessibility</a>
+<a href="cookie-policy.html">Cookies</a>
+</div>
+<span class="powered">Website concept by <a href="https://ca.linkedin.com/company/veridiandigital" target="_blank" rel="noopener">Veridian Digital</a></span>
 </div>
 </footer>
-
-
- 
-
-
 </body>
 </html>

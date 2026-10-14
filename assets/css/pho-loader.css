@@ -31,3 +31,7 @@ html.pho-loader-entry body,body.pho-loader-lock{overflow:hidden!important}
 @keyframes pho-rule{0%{transform:translateX(-110%)}60%,100%{transform:translateX(230%)}}
 @media(max-width:520px){.pho-loader__art{width:min(100%,310px)}.pho-loader__content{padding:16px 0}.pho-loader__caption{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.pho-loader,.pho-loader__content{transition:none}.pho-loader__steam,.pho-loader__chopsticks,.pho-loader__ingredients,.pho-loader__noodle,.pho-loader__broth,.pho-loader__herbs,.pho-loader__onion,.pho-loader__shadow,.pho-loader__rule span{animation:none!important}.pho-loader__steam{opacity:.3;stroke-dashoffset:0}}
+
+/* Idle loader: don't run its animations while invisible. */
+.pho-loader:not(.is-active) *{animation-play-state:paused}
+html.pho-loader-entry .pho-loader *{animation-play-state:running}

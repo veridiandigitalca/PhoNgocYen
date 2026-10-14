@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+
+# Replace YOUR-DOMAIN.example with the live domain before launch.
 Sitemap: https://YOUR-DOMAIN.example/sitemap.xml

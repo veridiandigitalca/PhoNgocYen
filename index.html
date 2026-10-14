@@ -1,189 +1,69 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
-
-  <meta charset="utf-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="theme-color" content="#17241d">
-
-  <meta name="description" content="A lush, soulful Vietnamese dining experience at Pho Ngoc Yen. Discover signature pho, Southern Vietnamese favourites, and a garden-inspired dining room in the GTA.">
-
-  <meta property="og:title" content="Pho Ngoc Yen — A Taste of Southern Vietnam">
-
-  <meta property="og:description" content="A garden-inspired Vietnamese dining experience, rooted in warmth, flavour and family.">
-
-  <meta property="og:type" content="website">
-
-  <meta property="og:image" content="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1600&q=85">
-
-  <title>
-Pho Ngoc Yen | A Taste of Southern Vietnam</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/pho-loader.css">
-  <script>
-  /* Only show the loader when arriving from an internal page navigation. */
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17241d">
+<title>Pho Ngoc Yen | A Taste of Southern Vietnam</title>
+<meta name="description" content="A lush, soulful Vietnamese dining experience at Pho Ngoc Yen. Discover signature pho, Southern Vietnamese favourites, and a garden-inspired dining room in the GTA.">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/">
+<meta property="og:site_name" content="Phở Ngọc Yến">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pho Ngoc Yen — A Taste of Southern Vietnam">
+<meta property="og:description" content="A garden-inspired Vietnamese dining experience, rooted in warmth, flavour and family.">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/">
+<meta property="og:image" content="https://YOUR-DOMAIN.example/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/pho-loader.css">
+<script>
+  /* Mark JS availability (reveal animations are opt-in) and show the page-transition loader only after an internal navigation. */
   (function () {
+    var root = document.documentElement;
+    root.classList.add("js");
     try {
       var key = "pho-ngoc-yen-transition";
       var raw = sessionStorage.getItem(key);
       if (!raw) return;
-      var transition = JSON.parse(raw);
-      if (!transition || transition.to !== location.pathname || Date.now() - transition.at > 6000) {
-        sessionStorage.removeItem(key);
-        return;
-      }
+      var t = JSON.parse(raw);
       sessionStorage.removeItem(key);
-      document.documentElement.classList.add("pho-loader-entry");
-      window.setTimeout(function () {
-        document.documentElement.classList.remove("pho-loader-entry");
-        var loader = document.querySelector("[data-pho-loader]");
-        if (loader) {
-          loader.classList.remove("is-active");
-          loader.setAttribute("aria-hidden", "true");
-        }
-        if (document.body) document.body.classList.remove("pho-loader-lock");
-      }, 1800);
-    } catch (error) {}
+      if (!t || t.to !== location.pathname || Date.now() - t.at > 6000) return;
+      root.classList.add("pho-loader-entry");
+      window.setTimeout(function () { root.classList.remove("pho-loader-entry"); }, 1800);
+    } catch (e) {}
   })();
   </script>
-     
-  <script defer src="assets/js/config.js">
-</script>
-
-  <script defer src="assets/js/app.js">
-</script>
-
-  <script defer src="assets/js/home.js">
-</script>
-
-  <script defer src="assets/js/page-init.js">
-</script>
-  
-
-
-  <script defer src="assets/js/pho-loader.js"></script>
+<script defer src="assets/js/app.js"></script>
+<script defer src="assets/js/pho-loader.js"></script>
 </head>
-
 <body>
-
-<div class="pho-loader" data-pho-loader role="status" aria-live="polite" aria-label="Preparing your next page" aria-hidden="true">
-  <div class="pho-loader__grain" aria-hidden="true"></div>
-  <div class="pho-loader__content">
-    <div class="pho-loader__art" aria-hidden="true">
-      <svg class="pho-loader__illustration" viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" focusable="false">
-        <defs>
-          <linearGradient id="pho-bowl-glaze" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf7"/><stop offset=".55" stop-color="#e8e1d1"/><stop offset="1" stop-color="#cfc7b4"/></linearGradient>
-          <linearGradient id="pho-broth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8793f"/><stop offset="1" stop-color="#75472c"/></linearGradient>
-          <clipPath id="pho-bowl-interior"><ellipse cx="180" cy="157" rx="104" ry="27"/></clipPath>
-        </defs>
-        <ellipse class="pho-loader__shadow" cx="180" cy="229" rx="95" ry="13"/>
-        <g class="pho-loader__steam-group" fill="none" stroke="#9aa887" stroke-linecap="round" stroke-width="3.5">
-          <path class="pho-loader__steam pho-loader__steam--one" d="M143 128 C126 111 153 101 141 82 C135 72 137 66 143 59"/>
-          <path class="pho-loader__steam pho-loader__steam--two" d="M179 122 C164 106 190 94 178 77 C171 67 176 59 182 52"/>
-          <path class="pho-loader__steam pho-loader__steam--three" d="M215 128 C201 111 225 101 214 86 C207 77 211 68 218 63"/>
-        </g>
-        <g class="pho-loader__chopsticks" stroke="#6b4b31" stroke-linecap="round" stroke-width="4"><path d="M226 77 L274 133"/><path d="M238 70 L284 126"/></g>
-        <g class="pho-loader__ingredients">
-          <path class="pho-loader__noodle" d="M106 151 C122 130 141 173 159 148 S193 132 208 151 S239 170 254 147"/>
-          <path class="pho-loader__noodle" d="M111 158 C130 138 143 177 166 157 S198 140 216 158 S239 171 248 157"/>
-          <path class="pho-loader__noodle" d="M124 145 C139 166 156 135 174 151 S205 169 225 145"/>
-          <ellipse cx="151" cy="145" rx="15" ry="8" fill="#8c4d36" transform="rotate(-24 151 145)"/>
-          <ellipse cx="205" cy="144" rx="16" ry="8" fill="#a45e42" transform="rotate(17 205 144)"/>
-          <g class="pho-loader__herbs" fill="#5b7b4b"><ellipse cx="137" cy="138" rx="5" ry="10" transform="rotate(-42 137 138)"/><ellipse cx="163" cy="132" rx="5" ry="11" transform="rotate(24 163 132)"/><ellipse cx="191" cy="135" rx="5" ry="10" transform="rotate(-28 191 135)"/><ellipse cx="220" cy="140" rx="5" ry="10" transform="rotate(40 220 140)"/><ellipse cx="177" cy="145" rx="4" ry="9" transform="rotate(65 177 145)"/></g>
-          <g class="pho-loader__onion" fill="#d8e67c"><circle cx="145" cy="151" r="3.5"/><circle cx="184" cy="132" r="3.5"/><circle cx="218" cy="153" r="3.5"/><circle cx="169" cy="160" r="3"/></g>
-          <g fill="#f5f2e9" opacity=".9"><circle cx="125" cy="151" r="2"/><circle cx="235" cy="151" r="2"/><circle cx="194" cy="158" r="2"/></g>
-        </g>
-        <path class="pho-loader__broth" d="M76 157 C81 193 112 220 180 221 C248 220 279 193 284 157 C260 174 100 174 76 157Z"/>
-        <path class="pho-loader__bowl" d="M66 155 C75 204 115 234 180 234 C245 234 285 204 294 155 L279 157 C269 194 236 215 180 215 C124 215 91 194 81 157Z" fill="url(#pho-bowl-glaze)"/>
-        <ellipse class="pho-loader__rim" cx="180" cy="156" rx="114" ry="31" fill="#fffdf7" stroke="#d1c8b7" stroke-width="3"/>
-        <ellipse class="pho-loader__soup" cx="180" cy="157" rx="103" ry="24" fill="url(#pho-broth)"/>
-        <g clip-path="url(#pho-bowl-interior)">
-          <g class="pho-loader__noodles-front" fill="none" stroke="#f0dfb9" stroke-linecap="round" stroke-width="3.2"><path d="M93 158 C115 139 133 174 156 155 S194 141 211 158 S240 170 263 151"/><path d="M100 166 C121 148 144 179 166 162 S204 149 224 166 S246 168 255 160"/><path d="M122 148 C143 167 159 144 181 155 S218 170 240 147"/></g>
-        </g>
-        <path d="M66 155 C75 204 115 234 180 234 C245 234 285 204 294 155" fill="none" stroke="#b8ad99" stroke-width="2"/>
-        <path d="M120 222 C148 233 212 233 240 222" fill="none" stroke="#d8e67c" stroke-width="2.5" opacity=".9"/>
-      </svg>
-    </div>
-    <p class="pho-loader__brand">PHỞ NGỌC YẾN</p>
-    <p class="pho-loader__caption">A bowl worth waiting for</p>
-    <span class="pho-loader__rule" aria-hidden="true"><span></span></span>
-  </div>
-</div>
-
-
-
-<a class="skip-link" href="#main">
-Skip to content</a>
-
-<div class="announcement">
-<span class="announcement-dot">
-</span>
- Southern Vietnamese comfort, served with a sense of occasion <span class="announcement-right">
-MISSISSAUGA · GTA</span>
-</div>
-
+<div class="pho-loader" data-pho-loader role="status" aria-live="polite" aria-label="Preparing your next page" aria-hidden="true"><div class="pho-loader__grain" aria-hidden="true"></div><div class="pho-loader__content"><div class="pho-loader__art" aria-hidden="true"><svg class="pho-loader__illustration" viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" focusable="false"><defs><linearGradient id="pho-bowl-glaze" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf7"/><stop offset=".55" stop-color="#e8e1d1"/><stop offset="1" stop-color="#cfc7b4"/></linearGradient><linearGradient id="pho-broth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8793f"/><stop offset="1" stop-color="#75472c"/></linearGradient><clipPath id="pho-bowl-interior"><ellipse cx="180" cy="157" rx="104" ry="27"/></clipPath></defs><ellipse class="pho-loader__shadow" cx="180" cy="229" rx="95" ry="13"/><g class="pho-loader__steam-group" fill="none" stroke="#9aa887" stroke-linecap="round" stroke-width="3.5"><path class="pho-loader__steam pho-loader__steam--one" d="M143 128 C126 111 153 101 141 82 C135 72 137 66 143 59"/><path class="pho-loader__steam pho-loader__steam--two" d="M179 122 C164 106 190 94 178 77 C171 67 176 59 182 52"/><path class="pho-loader__steam pho-loader__steam--three" d="M215 128 C201 111 225 101 214 86 C207 77 211 68 218 63"/></g><g class="pho-loader__chopsticks" stroke="#6b4b31" stroke-linecap="round" stroke-width="4"><path d="M226 77 L274 133"/><path d="M238 70 L284 126"/></g><g class="pho-loader__ingredients"><path class="pho-loader__noodle" d="M106 151 C122 130 141 173 159 148 S193 132 208 151 S239 170 254 147"/><path class="pho-loader__noodle" d="M111 158 C130 138 143 177 166 157 S198 140 216 158 S239 171 248 157"/><path class="pho-loader__noodle" d="M124 145 C139 166 156 135 174 151 S205 169 225 145"/><ellipse cx="151" cy="145" rx="15" ry="8" fill="#8c4d36" transform="rotate(-24 151 145)"/><ellipse cx="205" cy="144" rx="16" ry="8" fill="#a45e42" transform="rotate(17 205 144)"/><g class="pho-loader__herbs" fill="#5b7b4b"><ellipse cx="137" cy="138" rx="5" ry="10" transform="rotate(-42 137 138)"/><ellipse cx="163" cy="132" rx="5" ry="11" transform="rotate(24 163 132)"/><ellipse cx="191" cy="135" rx="5" ry="10" transform="rotate(-28 191 135)"/><ellipse cx="220" cy="140" rx="5" ry="10" transform="rotate(40 220 140)"/><ellipse cx="177" cy="145" rx="4" ry="9" transform="rotate(65 177 145)"/></g><g class="pho-loader__onion" fill="#d8e67c"><circle cx="145" cy="151" r="3.5"/><circle cx="184" cy="132" r="3.5"/><circle cx="218" cy="153" r="3.5"/><circle cx="169" cy="160" r="3"/></g><g fill="#f5f2e9" opacity=".9"><circle cx="125" cy="151" r="2"/><circle cx="235" cy="151" r="2"/><circle cx="194" cy="158" r="2"/></g></g><path class="pho-loader__broth" d="M76 157 C81 193 112 220 180 221 C248 220 279 193 284 157 C260 174 100 174 76 157Z"/><path class="pho-loader__bowl" d="M66 155 C75 204 115 234 180 234 C245 234 285 204 294 155 L279 157 C269 194 236 215 180 215 C124 215 91 194 81 157Z" fill="url(#pho-bowl-glaze)"/><ellipse class="pho-loader__rim" cx="180" cy="156" rx="114" ry="31" fill="#fffdf7" stroke="#d1c8b7" stroke-width="3"/><ellipse class="pho-loader__soup" cx="180" cy="157" rx="103" ry="24" fill="url(#pho-broth)"/><g clip-path="url(#pho-bowl-interior)"><g class="pho-loader__noodles-front" fill="none" stroke="#f0dfb9" stroke-linecap="round" stroke-width="3.2"><path d="M93 158 C115 139 133 174 156 155 S194 141 211 158 S240 170 263 151"/><path d="M100 166 C121 148 144 179 166 162 S204 149 224 166 S246 168 255 160"/><path d="M122 148 C143 167 159 144 181 155 S218 170 240 147"/></g></g><path d="M66 155 C75 204 115 234 180 234 C245 234 285 204 294 155" fill="none" stroke="#b8ad99" stroke-width="2"/><path d="M120 222 C148 233 212 233 240 222" fill="none" stroke="#d8e67c" stroke-width="2.5" opacity=".9"/></svg></div><p class="pho-loader__brand">PHỞ NGỌC YẾN</p><p class="pho-loader__caption">A bowl worth waiting for</p><span class="pho-loader__rule" aria-hidden="true"><span></span></span></div></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announcement"><span class="announcement-dot" aria-hidden="true"></span><span class="announcement-text">Southern Vietnamese comfort, served with a sense of occasion</span><span class="announcement-right">MISSISSAUGA · GTA</span></div>
 <header class="site-header" data-header>
-
-  <div class="header-inner">
-
-    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
-<span>
-</span>
-<span>
-</span>
-</button>
-
-    <a class="brand" href="index.html" aria-label="Pho Ngoc Yen home">
-<span class="brand-mark">
-NY</span>
-<span class="brand-wordmark">
-<strong>
-PHỞ NGỌC YẾN</strong>
-<small>
-VIETNAMESE KITCHEN</small>
-</span>
-</a>
-
-    <nav class="nav" id="primary-nav" aria-label="Main navigation">
-
-      <a class="active" href="index.html">
-Home</a>
-<a href="menu.html">
-Menu</a>
-<a href="story.html">
-Our story</a>
-<a href="locations.html">
-Locations</a>
-<a href="reviews-press.html">
-Reviews &amp; Press</a>
-
-    </nav>
-
-    <a class="button button-dark header-cta" href="locations.html#mississauga">
-Find your table <span aria-hidden="true">
-↗</span>
-</a>
-
-  </div>
-
+<div class="header-inner">
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+<a class="brand" href="index.html" aria-label="Pho Ngoc Yen home"><span class="brand-mark" aria-hidden="true">NY</span><span class="brand-wordmark"><strong>PHỞ NGỌC YẾN</strong><small>VIETNAMESE KITCHEN</small></span></a>
+<nav class="nav" id="primary-nav" aria-label="Main navigation">
+<a href="index.html" class="active" aria-current="page">Home</a>
+<a href="menu.html">Menu</a>
+<a href="story.html">Our story</a>
+<a href="locations.html">Locations</a>
+<a href="reviews-press.html">Reviews &amp; Press</a>
+</nav>
+<a class="button button-dark header-cta" href="locations.html#mississauga">Find your table <span aria-hidden="true">↗︎</span></a>
+</div>
 </header>
-
 <main id="main">
 
   <section class="hero">
@@ -196,28 +76,17 @@ Find your table <span aria-hidden="true">
 
     <div class="hero-content container">
 
-      <p class="eyebrow light-eyebrow">
-<span class="eyebrow-line">
-</span>
+      <p class="eyebrow light-eyebrow"><span class="eyebrow-line"></span>
  A little piece of Vietnam</p>
 
-      <h1>
-Come hungry.<br>
-<em>
-Leave connected.</em>
-</h1>
+      <h1>Come hungry.<br>
+<em>Leave connected.</em></h1>
 
-      <p class="hero-copy">
-Big-hearted Vietnamese cooking, fragrant bowls, and a dining room that feels like stepping into a hidden garden.</p>
+      <p class="hero-copy">Big-hearted Vietnamese cooking, fragrant bowls, and a dining room that feels like stepping into a hidden garden.</p>
 
       <div class="hero-actions">
-<a class="button button-lime" href="menu.html">
-Explore the menu <span class="value-arrow">↗︎</span>
-</a>
-<a class="text-link light-link" href="story.html">
-Get to know us <span>
-→</span>
-</a>
+<a class="button button-lime" href="menu.html">Explore the menu <span class="value-arrow" aria-hidden="true">↗︎</span></a>
+<a class="text-link light-link" href="story.html">Get to know us <span>→</span></a>
 </div>
 
       <div class="hero-footnote">
@@ -226,16 +95,13 @@ Get to know us <span>
 
     </div>
 
-    <div class="hero-side-note">
+    <div class="hero-side-note" aria-hidden="true">
 GOOD FOOD. GOOD COMPANY. ALWAYS.</div>
 
-    <div class="hero-pagination">
-<span class="pagination-active">
-</span>
-<span>
-</span>
-<span>
-</span>
+    <div class="hero-pagination" aria-hidden="true">
+<span class="pagination-active"></span>
+<span></span>
+<span></span>
 </div>
 
   </section>
@@ -245,38 +111,25 @@ GOOD FOOD. GOOD COMPANY. ALWAYS.</div>
     <div class="container intro-grid">
 
       <div class="intro-label reveal">
-<span class="section-index">
-01 / THE EXPERIENCE</span>
-<span class="vertical-rule">
-</span>
-<span class="side-label">
-More than a bowl</span>
+<span class="section-index">01 / THE EXPERIENCE</span>
+<span class="vertical-rule"></span>
+<span class="side-label">More than a bowl</span>
 </div>
 
       <div class="intro-copy reveal">
-<p class="eyebrow">
-<span class="eyebrow-line">
-</span>
+<p class="eyebrow"><span class="eyebrow-line"></span>
  Welcome to Ngọc Yến</p>
-<h2>
-Tradition, with<br>
-<em>
-a little wildness.</em>
-</h2>
-<p class="large-copy">
-We bring the warmth of Southern Vietnamese hospitality to the table: deeply comforting food, fresh herbs, vibrant textures, and a space made for slowing down together.</p>
-<a class="underlined-link" href="story.html">
-The story behind the flavour <span class="value-arrow">↗︎</span>
-</a>
+<h2>Tradition, with<br>
+<em>a little wildness.</em></h2>
+<p class="large-copy">We bring the warmth of Southern Vietnamese hospitality to the table: deeply comforting food, fresh herbs, vibrant textures, and a space made for slowing down together.</p>
+<a class="underlined-link" href="story.html">The story behind the flavour <span class="value-arrow" aria-hidden="true">↗︎</span></a>
 </div>
 
       <div class="intro-image-wrap reveal">
-<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=85" alt="Warm, greenery-filled restaurant interior" loading="lazy">
+<img width="1000" height="750" decoding="async" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=78" srcset="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=480&q=78 480w, https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=78 800w, https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=78 1000w" sizes="(max-width: 520px) 100vw, (max-width: 780px) 50vw, 33vw" alt="Warm, greenery-filled restaurant interior" loading="lazy">
 <div class="image-stamp">
-<span>
-CHÀO BẠN</span>
-<strong>
-Welcome<br>
+<span>CHÀO BẠN</span>
+<strong>Welcome<br>
 to our table</strong>
 <i><span class="css-star" aria-hidden="true"></span></i>
 </div>
@@ -292,84 +145,60 @@ to our table</strong>
 
       <div class="section-heading reveal">
 <div>
-<span class="section-index">
-02 / THE SIGNATURES</span>
-<p class="eyebrow">
-<span class="eyebrow-line">
-</span>
+<span class="section-index">02 / THE SIGNATURES</span>
+<p class="eyebrow"><span class="eyebrow-line"></span>
  Worth gathering for</p>
-<h2>
-Made to be<br>
-<em>
-remembered.</em>
-</h2>
+<h2>Made to be<br>
+<em>remembered.</em></h2>
 </div>
-<p class="heading-aside">
-A few guest favourites to start your journey. Menus and availability can vary by location.</p>
+<p class="heading-aside">A few guest favourites to start your journey. Menus and availability can vary by location.</p>
 </div>
 
       <div class="dish-grid">
 
         <article class="dish-card reveal">
 <div class="dish-photo">
-<img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1000&q=85" alt="A steaming bowl of Vietnamese pho" loading="lazy">
-<span class="dish-number">
-01</span>
+<img width="1000" height="750" decoding="async" src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1000&q=78" srcset="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=480&q=78 480w, https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=78 800w, https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1000&q=78 1000w" sizes="(max-width: 520px) 100vw, (max-width: 780px) 50vw, 33vw" alt="A steaming bowl of Vietnamese pho" loading="lazy">
+<span class="dish-number">01</span>
 </div>
 <div class="dish-meta">
-<span>
-THE COMFORT CLASSIC</span>
-<span>
-PHỞ</span>
+<span>THE COMFORT CLASSIC</span>
+<span>PHỞ</span>
 </div>
-<h3>
-Phở, your way</h3>
-<p>
-A soulful, aromatic bowl layered with noodles, fresh herbs, and the toppings you love.</p>
+<h3>Phở, your way</h3>
+<p>A soulful, aromatic bowl layered with noodles, fresh herbs, and the toppings you love.</p>
 </article>
 
         <article class="dish-card reveal">
 <div class="dish-photo">
-<img src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&w=1000&q=85" alt="Vietnamese noodle dish with fresh herbs" loading="lazy">
-<span class="dish-number">
-02</span>
+<img width="1000" height="750" decoding="async" src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&w=1000&q=78" srcset="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&w=480&q=78 480w, https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&w=800&q=78 800w, https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&w=1000&q=78 1000w" sizes="(max-width: 520px) 100vw, (max-width: 780px) 50vw, 33vw" alt="Vietnamese noodle dish with fresh herbs" loading="lazy">
+<span class="dish-number">02</span>
 </div>
 <div class="dish-meta">
-<span>
-THE CROWD-PLEASER</span>
-<span>
-BÚN</span>
+<span>THE CROWD-PLEASER</span>
+<span>BÚN</span>
 </div>
-<h3>
-Fresh, bright, balanced</h3>
-<p>
-Herbs, vermicelli, vibrant accompaniments, and the beautiful contrast of textures.</p>
+<h3>Fresh, bright, balanced</h3>
+<p>Herbs, vermicelli, vibrant accompaniments, and the beautiful contrast of textures.</p>
 </article>
 
         <article class="dish-card reveal">
 <div class="dish-photo">
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85" alt="A colourful Vietnamese-inspired salad" loading="lazy">
-<span class="dish-number">
-03</span>
+<img width="1000" height="750" decoding="async" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=78" srcset="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=480&q=78 480w, https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=78 800w, https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=78 1000w" sizes="(max-width: 520px) 100vw, (max-width: 780px) 50vw, 33vw" alt="A colourful Vietnamese-inspired salad" loading="lazy">
+<span class="dish-number">03</span>
 </div>
 <div class="dish-meta">
-<span>
-FRESH FROM THE GARDEN</span>
-<span>
-GỎI</span>
+<span>FRESH FROM THE GARDEN</span>
+<span>GỎI</span>
 </div>
-<h3>
-A little crunch, a lot of life</h3>
-<p>
-Fresh, lively salads with bright herbs and a punchy balance of sweet, sour, and savoury.</p>
+<h3>A little crunch, a lot of life</h3>
+<p>Fresh, lively salads with bright herbs and a punchy balance of sweet, sour, and savoury.</p>
 </article>
 
       </div>
 
       <div class="center-cta reveal">
-<a class="button button-outline" href="menu.html">
-Discover the full menu <span class="value-arrow">↗︎</span>
-</a>
+<a class="button button-outline" href="menu.html">Discover the full menu <span class="value-arrow" aria-hidden="true">↗︎</span></a>
 </div>
 
     </div>
@@ -381,22 +210,13 @@ Discover the full menu <span class="value-arrow">↗︎</span>
     <div class="garden-image">
 </div>
 <div class="garden-content reveal">
-<span class="section-index light-index">
-03 / STEP INSIDE</span>
-<p class="eyebrow light-eyebrow">
-<span class="eyebrow-line">
-</span>
+<span class="section-index light-index">03 / STEP INSIDE</span>
+<p class="eyebrow light-eyebrow"><span class="eyebrow-line"></span>
  A dining room unlike the everyday</p>
-<h2>
-Find your<br>
-<em>
-own little oasis.</em>
-</h2>
-<p>
-Natural textures, layered greenery, warm light, and the easy hum of a room full of people sharing a meal. Stay a while.</p>
-<a class="button button-lime" href="locations.html">
-Visit us <span class="value-arrow">↗︎</span>
-</a>
+<h2>Find your<br>
+<em>own little oasis.</em></h2>
+<p>Natural textures, layered greenery, warm light, and the easy hum of a room full of people sharing a meal. Stay a while.</p>
+<a class="button button-lime" href="locations.html">Visit us <span class="value-arrow" aria-hidden="true">↗︎</span></a>
 </div>
 <div class="garden-caption">
 A WARM WELCOME, EVERY TIME.</div>
@@ -408,55 +228,40 @@ A WARM WELCOME, EVERY TIME.</div>
     <div class="container values-grid">
 
       <div class="values-title reveal">
-<span class="section-index">
-04 / WHAT MATTERS</span>
-<p class="eyebrow">
-<span class="eyebrow-line">
-</span>
+<span class="section-index">04 / WHAT MATTERS</span>
+<p class="eyebrow"><span class="eyebrow-line"></span>
  Our kind of hospitality</p>
-<h2>
-Good food is<br>
-<em>
-only the start.</em>
-</h2>
+<h2>Good food is<br>
+<em>only the start.</em></h2>
 </div>
 
       <div class="value-list">
 
         <article class="value-item reveal">
-<span class="value-icon"><span class="css-star" aria-hidden="true"></span></span>
+<span class="value-icon" aria-hidden="true"><span class="css-star" aria-hidden="true"></span></span>
 <div>
-<h3>
-Flavour with a point of view</h3>
-<p>
-Southern Vietnamese influences, vibrant accompaniments, and dishes made for a full-sensory experience.</p>
+<h3>Flavour with a point of view</h3>
+<p>Southern Vietnamese influences, vibrant accompaniments, and dishes made for a full-sensory experience.</p>
 </div>
-<span class="value-arrow">
-↗</span>
+<span class="value-arrow" aria-hidden="true">↗</span>
 </article>
 
         <article class="value-item reveal">
-<span class="value-icon"><span class="css-star" aria-hidden="true"></span></span>
+<span class="value-icon" aria-hidden="true"><span class="css-star" aria-hidden="true"></span></span>
 <div>
-<h3>
-Room to come together</h3>
-<p>
-Catch up over a bowl, bring the family, or make an ordinary night feel a little more special.</p>
+<h3>Room to come together</h3>
+<p>Catch up over a bowl, bring the family, or make an ordinary night feel a little more special.</p>
 </div>
-<span class="value-arrow">
-↗</span>
+<span class="value-arrow" aria-hidden="true">↗</span>
 </article>
 
         <article class="value-item reveal">
-<span class="value-icon"><span class="css-star" aria-hidden="true"></span></span>
+<span class="value-icon" aria-hidden="true"><span class="css-star" aria-hidden="true"></span></span>
 <div>
-<h3>
-Warmth in every detail</h3>
-<p>
-From the first hello to the last spoonful, we want you to feel comfortable at our table.</p>
+<h3>Warmth in every detail</h3>
+<p>From the first hello to the last spoonful, we want you to feel comfortable at our table.</p>
 </div>
-<span class="value-arrow">
-↗</span>
+<span class="value-arrow" aria-hidden="true">↗</span>
 </article>
 
       </div>
@@ -466,27 +271,20 @@ From the first hello to the last spoonful, we want you to feel comfortable at ou
   </section>
 
 
-  <section class="reviews-section section-pad" aria-labelledby="guest-reviews-title"><div class="container"><div class="reviews-heading"><div><span class="section-index">05 / WORD OF MOUTH</span><p class="eyebrow"><span class="eyebrow-line"></span> At our table, in their words</p><h2 id="guest-reviews-title">Good food leaves<br><em>a good feeling.</em></h2></div><div class="reviews-summary"><span class="google-word" aria-label="Google"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span><span class="review-stars" aria-label="Five star reviews"><span></span><span></span><span></span><span></span><span></span></span><span>Guest reviews</span></div></div><div class="review-grid"><article class="review-card"><div class="review-card-top"><span class="review-avatar" aria-hidden="true">DP</span><div class="review-author"><strong>Damodar Prabhu</strong><small>Local Guide · 72 reviews · 276 photos</small></div><span class="review-source">Google review</span></div><div class="review-stars" aria-label="5 out of 5 stars"><span></span><span></span><span></span><span></span><span></span></div><blockquote>The best pho I ever had! What a taste and what an awesome experience dining here! The place was crowded and it took about 30 mins or so for us to get a table. Considering we were 9 people in our party, wasn’t a bad wait at all. The service is absolutely exemplary. The manager and staff are very kind and serve with a smile. There were good amount of vegan options for me. My only ask to the management would be to consider adding at least one vegan dessert in the menu. Highly recommend this place and you will love the food and the service! Food: 5/5 · Service: 5/5 · Atmosphere: 5/5 · Group size: 9+ people.</blockquote><div class="review-card-foot"><span>6 months ago</span><span>Dinner · CA$100+</span></div></article><article class="review-card"><div class="review-card-top"><span class="review-avatar" aria-hidden="true">JY</span><div class="review-author"><strong>Jon Yip Chuck</strong><small>Local Guide · 563 reviews · 2,594 photos</small></div><span class="review-source">Google review</span></div><div class="review-stars" aria-label="5 out of 5 stars"><span></span><span></span><span></span><span></span><span></span></div><blockquote>Honestly, not much to say about this place aside from it probably being the best Vietnamese restaurant in the GTA. The food is incredible and speaks for itself. Absolute must tries are the pho and fish sauce wings. Some of the best wings and the best pho broth I’ve ever had. Service is friendly, accommodating, and fast. The atmosphere is lively and the decor is fun and inviting. Prices are reasonable and quality is exceptional. Definitely give it a try and I can almost guarantee it won’t be your last trip here. Highly, highly recommend!</blockquote><div class="review-card-foot"><span>6 months ago</span><span>Lunch · CA$20–30</span></div></article><article class="review-card"><div class="review-card-top"><span class="review-avatar" aria-hidden="true">SP</span><div class="review-author"><strong>Sarah Phu</strong><small>Local Guide · 216 reviews · 1,096 photos</small></div><span class="review-source">Google review</span></div><div class="review-stars" aria-label="5 out of 5 stars"><span></span><span></span><span></span><span></span><span></span></div><blockquote>Pho Ngoc Yen II is probably my favourite Vietnamese restaurant in Etobicoke. The space has a welcoming atmosphere, decorated with plenty of greenery, and has a large patio that’s perfect during warmer months. There is plenty of free parking on site, although the restaurant can get quite busy. On one occasion, the lot was completely full and I had to wait a bit for a spot, which speaks to its popularity. The staff are friendly and attentive, and payment is made at the front counter after your meal. One thing that sets this restaurant apart is its extensive menu. While the pho is good, there are also many other Vietnamese and Thai dishes that you don’t typically find at most Vietnamese restaurants, making it a great place to explore beyond the usual Vietnamese classics.</blockquote><div class="review-card-foot"><span>3 months ago</span><span>Dinner · CA$30–40</span></div></article></div><div class="reviews-cta"><p>Real words from guests, presented in a familiar Google-review style.</p><a class="button button-outline" href="reviews-press.html">Read reviews &amp; explore press <span aria-hidden="true">↗</span></a></div></div></section>
+  <section class="reviews-section section-pad" aria-labelledby="guest-reviews-title"><div class="container"><div class="reviews-heading"><div><span class="section-index">05 / WORD OF MOUTH</span><p class="eyebrow"><span class="eyebrow-line"></span> At our table, in their words</p><h2 id="guest-reviews-title">Good food leaves<br><em>a good feeling.</em></h2></div><div class="reviews-summary"><span class="google-word" role="img" aria-label="Google"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span><span class="review-stars" role="img" aria-label="Five star reviews"><span></span><span></span><span></span><span></span><span></span></span><span>Guest reviews</span></div></div><div class="review-grid"><article class="review-card"><div class="review-card-top"><span class="review-avatar" aria-hidden="true">DP</span><div class="review-author"><strong>Damodar Prabhu</strong><small>Local Guide · 72 reviews · 276 photos</small></div><span class="review-source">Google review</span></div><div class="review-stars" role="img" aria-label="5 out of 5 stars"><span></span><span></span><span></span><span></span><span></span></div><blockquote>The best pho I ever had! What a taste and what an awesome experience dining here! The place was crowded and it took about 30 mins or so for us to get a table. Considering we were 9 people in our party, wasn’t a bad wait at all. The service is absolutely exemplary. The manager and staff are very kind and serve with a smile. There were good amount of vegan options for me. My only ask to the management would be to consider adding at least one vegan dessert in the menu. Highly recommend this place and you will love the food and the service! Food: 5/5 · Service: 5/5 · Atmosphere: 5/5 · Group size: 9+ people.</blockquote><div class="review-card-foot"><span>6 months ago</span><span>Dinner · CA$100+</span></div></article><article class="review-card"><div class="review-card-top"><span class="review-avatar" aria-hidden="true">JY</span><div class="review-author"><strong>Jon Yip Chuck</strong><small>Local Guide · 563 reviews · 2,594 photos</small></div><span class="review-source">Google review</span></div><div class="review-stars" role="img" aria-label="5 out of 5 stars"><span></span><span></span><span></span><span></span><span></span></div><blockquote>Honestly, not much to say about this place aside from it probably being the best Vietnamese restaurant in the GTA. The food is incredible and speaks for itself. Absolute must tries are the pho and fish sauce wings. Some of the best wings and the best pho broth I’ve ever had. Service is friendly, accommodating, and fast. The atmosphere is lively and the decor is fun and inviting. Prices are reasonable and quality is exceptional. Definitely give it a try and I can almost guarantee it won’t be your last trip here. Highly, highly recommend!</blockquote><div class="review-card-foot"><span>6 months ago</span><span>Lunch · CA$20–30</span></div></article><article class="review-card"><div class="review-card-top"><span class="review-avatar" aria-hidden="true">SP</span><div class="review-author"><strong>Sarah Phu</strong><small>Local Guide · 216 reviews · 1,096 photos</small></div><span class="review-source">Google review</span></div><div class="review-stars" role="img" aria-label="5 out of 5 stars"><span></span><span></span><span></span><span></span><span></span></div><blockquote>Pho Ngoc Yen II is probably my favourite Vietnamese restaurant in Etobicoke. The space has a welcoming atmosphere, decorated with plenty of greenery, and has a large patio that’s perfect during warmer months. There is plenty of free parking on site, although the restaurant can get quite busy. On one occasion, the lot was completely full and I had to wait a bit for a spot, which speaks to its popularity. The staff are friendly and attentive, and payment is made at the front counter after your meal. One thing that sets this restaurant apart is its extensive menu. While the pho is good, there are also many other Vietnamese and Thai dishes that you don’t typically find at most Vietnamese restaurants, making it a great place to explore beyond the usual Vietnamese classics.</blockquote><div class="review-card-foot"><span>3 months ago</span><span>Dinner · CA$30–40</span></div></article></div><div class="reviews-cta"><p>Real words from guests, presented in a familiar Google-review style.</p><a class="button button-outline" href="reviews-press.html">Read reviews &amp; explore press <span aria-hidden="true">↗</span></a></div></div></section>
   <section class="press-section" aria-labelledby="press-preview-title"><div class="container"><div class="press-heading"><div><span class="section-index">06 / RECOGNITION</span><p class="eyebrow"><span class="eyebrow-line"></span> Stories beyond our table</p><h2 id="press-preview-title">A little recognition.<br><em>A lot of gratitude.</em></h2></div><p>We’re grateful for the guests, writers, and food lovers who share our story. Explore official guide recognition and selected coverage from the food press.</p></div><div class="press-grid"><article class="press-card press-card--feature"><span class="press-card-kicker">MICHELIN Guide</span><div><h3>Listed in the Guide</h3><p>Discover Phở Ngọc Yến’s official MICHELIN Guide restaurant listing.</p><a class="press-link" href="https://guide.michelin.com/ca/en/ontario/mississauga_1245409/restaurant/pho-ngoc-yen" target="_blank" rel="noopener">View the MICHELIN Guide <span aria-hidden="true">↗</span></a><span class="press-card-mark css-star" aria-hidden="true"></span></div></article><article class="press-card"><span class="press-card-kicker">Northly · July 6, 2026</span><div><h3>Pho Ngoc Yen is Getting Its Flowers in Toronto</h3><p>A feature on the restaurant’s growing presence in Toronto and its Vietnamese food.</p><a class="press-link" href="https://thenorthly.com/stories/pho-ngoc-yen-is-getting-its-flowers-in-toronto/" target="_blank" rel="noopener">Read the feature <span aria-hidden="true">↗</span></a></div></article><article class="press-card"><span class="press-card-kicker">NOW Toronto · Aug 5, 2025</span><div><h3>A Toronto restaurant earns praise for its phở</h3><p>NOW Toronto covers singer Kehlani’s enthusiastic response to Phở Ngọc Yến.</p><a class="press-link" href="https://nowtoronto.com/culture/singer-kehlani-toronto-restaurant-best-vietnamese-food/" target="_blank" rel="noopener">Read the article <span aria-hidden="true">↗</span></a></div></article></div><p class="press-note">Article links open the original publisher’s website. Coverage and guide listings are not the same as a Michelin Star award.</p><div class="center-cta"><a class="button button-outline" href="reviews-press.html#press">Explore reviews &amp; press <span aria-hidden="true">↗</span></a></div></div></section>
 
   <section class="visit-band">
 
     <div class="container visit-band-inner">
 <div>
-<span class="section-index light-index">
-YOUR TABLE IS WAITING</span>
-<h2>
-Let's make a meal<br>
-<em>
-of it.</em>
-</h2>
+<span class="section-index light-index">YOUR TABLE IS WAITING</span>
+<h2>Let's make a meal<br>
+<em>of it.</em></h2>
 </div>
 <div class="visit-band-action">
-<p>
-Find the location closest to you, check the details, and come hungry.</p>
-<a class="button button-lime" href="locations.html">
-Choose a location <span class="value-arrow">↗︎</span>
-</a>
+<p>Find the location closest to you, check the details, and come hungry.</p>
+<a class="button button-lime" href="locations.html">Choose a location <span class="value-arrow" aria-hidden="true">↗︎</span></a>
 </div>
 <span class="band-flower"><span class="css-star" aria-hidden="true"></span></span>
 </div>
@@ -494,86 +292,44 @@ Choose a location <span class="value-arrow">↗︎</span>
   </section>
 
 </main>
-
 <footer class="site-footer">
 <div class="container footer-main">
 <div class="footer-brand">
-<a class="brand brand-footer" href="index.html">
-<span class="brand-mark">
-NY</span>
-<span class="brand-wordmark">
-<strong>
-PHỞ NGỌC YẾN</strong>
-<small>
-VIETNAMESE KITCHEN</small>
-</span>
-</a>
-<p>
-Good food. Good company.<br>
-A little piece of Vietnam.</p>
+<a class="brand brand-footer" href="index.html" aria-label="Pho Ngoc Yen home"><span class="brand-mark" aria-hidden="true">NY</span><span class="brand-wordmark"><strong>PHỞ NGỌC YẾN</strong><small>VIETNAMESE KITCHEN</small></span></a>
+<p>Good food. Good company.<br>A little piece of Vietnam.</p>
 </div>
+<nav class="footer-column" aria-label="Footer navigation">
+<span class="footer-heading">EXPLORE</span>
+<a href="menu.html">Menu</a>
+<a href="story.html">Our story</a>
+<a href="locations.html">Locations</a>
+<a href="reviews-press.html">Reviews &amp; Press</a>
+<a href="group-dining.html">Group dining</a>
+<a href="contact.html">Contact</a>
+</nav>
 <div class="footer-column">
-<span class="footer-heading">
-EXPLORE</span>
-<a href="menu.html">
-Menu</a>
-<a href="story.html">
-Our story</a>
-<a href="locations.html">
-Locations</a>
-<a href="reviews-press.html">
-Reviews &amp; Press</a>
-<a href="contact.html">
-Contact</a>
-</div>
-<div class="footer-column">
-<span class="footer-heading">
-VISIT US</span>
-<strong>
-Mississauga</strong>
-<span>
-1090 Kamato Rd, Units 17–19</span>
-<span>
-Mississauga, ON L4W 2P3</span>
-<a href="tel:+19056299559">
-(905) 629-9559</a>
+<span class="footer-heading">VISIT US</span>
+<strong>Mississauga</strong>
+<span>1090 Kamato Rd, Units 17–19</span>
+<span>Mississauga, ON L4W 2P3</span>
+<a href="tel:+19056299559">(905) 629-9559</a>
 </div>
 <div class="footer-note">
-<span class="footer-flower"><span class="css-star" aria-hidden="true"></span></span>
-<p>
-Come as you are.<br>
-Leave a little happier.</p>
-<a class="text-link light-link" href="locations.html">
-Find your location →</a>
+<span class="footer-flower" aria-hidden="true"><span class="css-star"></span></span>
+<p>Come as you are.<br>Leave a little happier.</p>
+<a class="text-link light-link" href="locations.html">Find your location <span aria-hidden="true">→︎</span></a>
 </div>
 </div>
 <div class="container footer-bottom">
-<span>
-© <span data-year>
-</span>
- Phở Ngọc Yến. All rights reserved.</span>
+<span>© <span data-year></span> Phở Ngọc Yến. All rights reserved.</span>
 <div>
-<a href="privacy.html">
-Privacy</a>
-<a href="terms.html">
-Terms</a>
-<a href="accessibility.html">
-Accessibility</a>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
+<a href="accessibility.html">Accessibility</a>
+<a href="cookie-policy.html">Cookies</a>
 </div>
-<span class="powered">
-Website concept by <a href="https://ca.linkedin.com/company/veridiandigital" target="_blank" rel="noopener">
-Veridian Digital</a>
-</span>
+<span class="powered">Website concept by <a href="https://ca.linkedin.com/company/veridiandigital" target="_blank" rel="noopener">Veridian Digital</a></span>
 </div>
 </footer>
-
-
- 
-
-
- 
-
-
 </body>
-
 </html>

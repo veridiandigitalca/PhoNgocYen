@@ -1,61 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/</loc>
-</url>
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/menu.html</loc>
-</url>
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/story.html</loc>
-</url>
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/locations.html</loc>
-</url>
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/contact.html</loc>
-</url>
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/group-dining.html</loc>
-</url>
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/cookie-policy.html</loc>
-</url>
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/privacy.html</loc>
-</url>
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/terms.html</loc>
-</url>
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/accessibility.html</loc>
-</url>
-
-
-  <url>
-<loc>
-https://YOUR-DOMAIN.example/reviews-press.html</loc>
-</url>
-
+  <url><loc>https://YOUR-DOMAIN.example/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/menu.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/story.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/locations.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/reviews-press.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/group-dining.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/contact.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/cookie-policy.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/privacy.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/terms.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/accessibility.html</loc></url>
 </urlset>
