@@ -2413,6 +2413,32 @@ select:focus-visible {
   transform: none;
 }
 
+.story-image-caption-copy-3 {
+  position: absolute;
+  bottom: 280px;
+  left: max(32px, calc((100% - var(--container)) / 2));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transform: none;
+}
+
+
+.story-image-caption-copy-3 span {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: .2em;
+  font-weight: 400;
+}
+
+.story-image-caption-copy-3 strong {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 1.1;
+}
+
 .story-image-caption-copy span {
   font-family: var(--sans);
   font-size: 10px;
