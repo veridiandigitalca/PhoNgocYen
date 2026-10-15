@@ -3273,6 +3273,15 @@ select:focus-visible {
   .story-image-caption-copy strong {
     font-size: 29px;
   }
+
+  .story-image-caption-copy-3 {
+    left: 18px;
+    bottom: 53px;
+    gap: 12px;
+  }
+  .story-image-caption-copy-3 strong {
+    font-size: 29px;
+  }
   .header-inner {
     height: 68px;
   }
