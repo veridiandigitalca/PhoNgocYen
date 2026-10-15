@@ -3335,3 +3335,19 @@ select:focus-visible {
     text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+  .announcement {
+    gap: 5px;
+  }
+
+  .announcement-text {
+    font-size: 10px;
+    letter-spacing: -0.4px;
+  }
+
+  .announcement-right {
+    font-size: 8px;
+    letter-spacing: -0.2px;
+  }
+}
