@@ -3326,3 +3326,12 @@ select:focus-visible {
   }
 }
 
+
+
+@media (max-width: 768px) {
+  footer .powered {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
